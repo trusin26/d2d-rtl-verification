@@ -1,0 +1,216 @@
+59c40d48d30d4ae5c665b8bde6f85eb9bbc1b94f50a0a7e5fcd47c39e06d9867  ../RTL_design/cells.v
+f9b9524f808c003c0c78812d2961e68b51a4b97780449d6e070a63cbf556f474  ../RTL_design/hop_control.v
+b89f29a334978b5591ecd6a59a6f27d0227b8eab8c3acaafe32fbf9b00e154b7  ../RTL_design/hop_credit.v
+cfbaa4d6fa8c49c6ac2f35f87c8513267296eca4512e5134fdbbe7fe557d107c  ../RTL_design/hop_path.v
+dfa12b4f6b0180145feb41e34475edc39a6d14ce94ae29ceaedb9cbef8d52ece  ../RTL_design/hop_unpack.v
+83d3490734cf2e9622c59660ed07f157527133d6fb5358d34ba21ac88578a815  ../RTL_design/packer.v
+f2353a77f5d936533c7b7d57663f4e21a60a141120454c6eeb51b89ca1373ab8  ../RTL_design/phy_box.v
+bdd5cf9144f740f192b9bfd704d5867053c4866e6077cc311dd0a3b27226722a  ../RTL_design/ready_mem.v
+0e6cc657d24112408d297508ca2fc2c0e2617ddd7f8ce8c4098607d51ea0c47e  ../RTL_design/release.v
+502371cc681a7c66a2be7b32ad6da794551938c331d5062c3886ece48800b92a  ../RTL_design/scheduler_tree.v
+8e4221664841b930d374778e42073776bb7878606a9c5836f7c93b83963b26c7  ../RTL_design/scores.v
+e53bd8ff5fa7552d6241fb5216f316b4049efd893237790387f86c2db5edcb32  tb_hop_path.v
+===== directed_out/clean.log =====
+[CREDIT_EVENT] cycle=34 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=42 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=66 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=74 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=98 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=106 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=130 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=138 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=162 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=170 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=194 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=202 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=226 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=234 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=258 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=266 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=290 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=298 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=322 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=330 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=354 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=362 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=386 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=394 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=418 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=426 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=450 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=458 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=482 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=490 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=514 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=522 send=0 return=1 credit_pre=15
+---- common ----
+config: SCEN=0 POLICY=1 K=16 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=16 other injected=0 delivered=16 (gemm 16, other 0)
+sends=16 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=16 errors=0 findings=3
+directed_out/tb_trace.v:357: $finish called at 5970000 (1ps)
+[DIRECTED_SUMMARY] phy_errors=0 credit_errors=0 overwrite_events=0 predicted_other_reject=0 predicted_gemm_reject=0
+===== directed_out/credit.log =====
+[OTHER_IN] cycle=2 tag=0 ready_count=0 send=0
+[CREDIT_EVENT] cycle=3 send=1 return=0 credit_pre=1
+[OTHER_IN] cycle=3 tag=1 ready_count=1 send=1
+[OTHER_IN] cycle=4 tag=2 ready_count=1 send=0
+[OTHER_IN] cycle=5 tag=3 ready_count=2 send=0
+[OTHER_OUT] cycle=7 tag=0
+[CREDIT_EVENT] cycle=11 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=12 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=16 tag=1
+[OVERWRITE_EVENT] cycle=16 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000000000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000001
+[CREDIT_EVENT] cycle=20 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=21 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=25 tag=3
+[OVERWRITE_EVENT] cycle=25 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000010000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000003
+[CREDIT_EVENT] cycle=29 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=30 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=34 tag=2
+[OVERWRITE_EVENT] cycle=34 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000030000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000002
+[CREDIT_EVENT] cycle=38 send=0 return=1 credit_pre=0
+---- common ----
+config: SCEN=1 POLICY=1 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=4 delivered=4 (gemm 0, other 4)
+sends=4 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=3
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- scheduler order (K=1) ----
+send order of tags: 0 1 3 2  (injected 0,1,2,3 with D = 500,100,300,200)
+[PASS]    send order matches the policy (FCFS = arrival, others = earliest D)
+[PASS]    all four flits delivered
+measured gap between sends with K=1: 9 cycles (2*D_PHY = 8)
+[PASS]    credit never returns earlier than 2*D_PHY
+[FINDING] effective credit RTT = 2*D_PHY + 1 (one extra register); K >= 9 needed for 1 flit/cycle
+SUMMARY: SCEN=1 POLICY=1 K=1 errors=0 findings=1
+directed_out/tb_trace.v:357: $finish called at 670000 (1ps)
+[DIRECTED_SUMMARY] phy_errors=0 credit_errors=0 overwrite_events=3 predicted_other_reject=0 predicted_gemm_reject=0
+===== directed_out/overflow.log =====
+[OTHER_IN] cycle=2 tag=0 ready_count=0 send=0
+[CREDIT_EVENT] cycle=3 send=1 return=0 credit_pre=1
+[OTHER_IN] cycle=3 tag=1 ready_count=1 send=1
+[OTHER_IN] cycle=4 tag=2 ready_count=1 send=0
+[OTHER_IN] cycle=5 tag=3 ready_count=2 send=0
+[OTHER_IN] cycle=6 tag=4 ready_count=3 send=0
+[OTHER_IN] cycle=7 tag=5 ready_count=4 send=0
+[OTHER_REJECT_PREDICTED] cycle=7 tag=5
+[OTHER_OUT] cycle=7 tag=0
+[OTHER_IN] cycle=8 tag=6 ready_count=4 send=0
+[OTHER_REJECT_PREDICTED] cycle=8 tag=6
+[OTHER_IN] cycle=9 tag=7 ready_count=4 send=0
+[OTHER_REJECT_PREDICTED] cycle=9 tag=7
+[CREDIT_EVENT] cycle=11 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=12 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=16 tag=1
+[OVERWRITE_EVENT] cycle=16 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000000000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000001
+[CREDIT_EVENT] cycle=20 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=21 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=25 tag=2
+[OVERWRITE_EVENT] cycle=25 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000010000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000002
+[CREDIT_EVENT] cycle=29 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=30 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=34 tag=3
+[OVERWRITE_EVENT] cycle=34 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000020000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000003
+[CREDIT_EVENT] cycle=38 send=0 return=1 credit_pre=0
+[CREDIT_EVENT] cycle=39 send=1 return=0 credit_pre=1
+[OTHER_OUT] cycle=43 tag=4
+[OVERWRITE_EVENT] cycle=43 is_gemm=0 remaining_pre=24 old_word=0000000000000000000000000000000000000000000000030000000000000000 new_word=0000000000000000000000000000000000000000000000000000000000000004
+[CREDIT_EVENT] cycle=47 send=0 return=1 credit_pre=0
+---- common ----
+config: SCEN=2 POLICY=1 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=8 delivered=5 (gemm 0, other 5)
+sends=5 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=4
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+         dropped flits = 3
+[FINDING] ready_mem dropped flits silently (no backpressure to packer/other source)
+---- overflow (K=1, 8 flits back to back) ----
+injected 8, delivered 5
+[FINDING] flits lost when 4 slots are full; no backpressure signal exists
+SUMMARY: SCEN=2 POLICY=1 K=1 errors=0 findings=2
+directed_out/tb_trace.v:357: $finish called at 1630000 (1ps)
+[DIRECTED_SUMMARY] phy_errors=0 credit_errors=0 overwrite_events=4 predicted_other_reject=3 predicted_gemm_reject=0
+===== directed_out/mixed.log =====
+[CREDIT_EVENT] cycle=34 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=42 send=0 return=1 credit_pre=15
+[OTHER_IN] cycle=42 tag=165 ready_count=0 send=0
+[CREDIT_EVENT] cycle=43 send=1 return=0 credit_pre=16
+[OTHER_OUT] cycle=47 tag=165
+[OVERWRITE_EVENT] cycle=47 is_gemm=0 remaining_pre=24 old_word=3b424950575e656c737a81888f969da4abb2b9c0c7ced5dc0000000000000000 new_word=00000000000000000000000000000000000000000000000000000000000000a5
+[CREDIT_EVENT] cycle=51 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=66 send=1 return=0 credit_pre=16
+[OVERWRITE_EVENT] cycle=70 is_gemm=1 remaining_pre=10 old_word=000000000000000000a500000000000000000000000000000000000000000000 new_word=e3eaf1f8ff060d141b222930373e454c535a61686f767d848b9299a0a7aeb5bc
+[CREDIT_EVENT] cycle=74 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=98 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=106 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=130 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=138 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=162 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=170 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=194 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=202 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=226 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=234 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=258 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=266 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=290 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=298 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=322 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=330 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=354 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=362 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=386 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=394 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=418 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=426 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=450 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=458 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=482 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=490 send=0 return=1 credit_pre=15
+[CREDIT_EVENT] cycle=514 send=1 return=0 credit_pre=16
+[CREDIT_EVENT] cycle=522 send=0 return=1 credit_pre=15
+---- common ----
+config: SCEN=3 POLICY=1 K=16 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=16 other injected=1 delivered=17 (gemm 16, other 1)
+sends=17 min_gap_between_sends=9 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+---- other flit during unpack (K=16) ----
+bytes out=512 (expected 512), mismatches=23, extra=0, first mismatch at byte 9
+[FINDING] unpack takes non-GEMM flits and overwrites the GEMM flit it is streaming
+SUMMARY: SCEN=3 POLICY=1 K=16 errors=0 findings=4
+directed_out/tb_trace.v:357: $finish called at 6170000 (1ps)
+[DIRECTED_SUMMARY] phy_errors=0 credit_errors=0 overwrite_events=2 predicted_other_reject=0 predicted_gemm_reject=0

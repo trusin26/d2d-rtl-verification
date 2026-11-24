@@ -1,0 +1,317 @@
+]633;E;echo "===== ENVIRONMENT =====";1ce01489-22a4-49af-97ff-9a362a3880b8]633;C===== ENVIRONMENT =====
+Tue Nov 24 10:31:06 +07 2026
+Linux DESKTOP-LJP063F 6.18.33.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Fri Jun  5 01:12:21 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+===== ICARUS VERILOG =====
+Icarus Verilog version 12.0 (stable) ()
+
+Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Preprocessor version 12.0 (stable) ()
+
+Copyright (c) 1999-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Parser/Elaborator version 12.0 (stable) ()
+
+Copyright (c) 1998-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+ FLAGS DLL vvp.tgt
+vvp.tgt: Icarus Verilog VVP Code Generator 12.0 (stable) ()
+
+Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+===== RTL FILES =====
+total 64K
+-rwxrwxrwx 1 trusin trusin 2.6K Nov 24 09:26 cells.v
+-rwxrwxrwx 1 trusin trusin 2.8K Nov 24 09:26 hop_control.v
+-rwxrwxrwx 1 trusin trusin 1.7K Nov 24 09:26 hop_credit.v
+-rwxrwxrwx 1 trusin trusin 5.5K Nov 24 09:26 hop_path.v
+-rwxrwxrwx 1 trusin trusin 2.6K Nov 24 09:26 hop_unpack.v
+-rwxrwxrwx 1 trusin trusin 4.4K Nov 24 09:26 packer.v
+-rwxrwxrwx 1 trusin trusin 1.6K Nov 24 09:26 phy_box.v
+-rwxrwxrwx 1 trusin trusin 9.0K Nov 24 09:26 ready_mem.v
+-rwxrwxrwx 1 trusin trusin 5.0K Nov 24 09:26 release.v
+-rwxrwxrwx 1 trusin trusin 2.2K Nov 24 09:26 scheduler_tree.v
+-rwxrwxrwx 1 trusin trusin 3.6K Nov 24 09:26 scores.v
+===== RTL CHECKSUM =====
+59c40d48d30d4ae5c665b8bde6f85eb9bbc1b94f50a0a7e5fcd47c39e06d9867  ../RTL_design/cells.v
+f9b9524f808c003c0c78812d2961e68b51a4b97780449d6e070a63cbf556f474  ../RTL_design/hop_control.v
+b89f29a334978b5591ecd6a59a6f27d0227b8eab8c3acaafe32fbf9b00e154b7  ../RTL_design/hop_credit.v
+cfbaa4d6fa8c49c6ac2f35f87c8513267296eca4512e5134fdbbe7fe557d107c  ../RTL_design/hop_path.v
+dfa12b4f6b0180145feb41e34475edc39a6d14ce94ae29ceaedb9cbef8d52ece  ../RTL_design/hop_unpack.v
+83d3490734cf2e9622c59660ed07f157527133d6fb5358d34ba21ac88578a815  ../RTL_design/packer.v
+f2353a77f5d936533c7b7d57663f4e21a60a141120454c6eeb51b89ca1373ab8  ../RTL_design/phy_box.v
+bdd5cf9144f740f192b9bfd704d5867053c4866e6077cc311dd0a3b27226722a  ../RTL_design/ready_mem.v
+0e6cc657d24112408d297508ca2fc2c0e2617ddd7f8ce8c4098607d51ea0c47e  ../RTL_design/release.v
+502371cc681a7c66a2be7b32ad6da794551938c331d5062c3886ece48800b92a  ../RTL_design/scheduler_tree.v
+8e4221664841b930d374778e42073776bb7878606a9c5836f7c93b83963b26c7  ../RTL_design/scores.v
+===== TESTBENCH CHECKSUM =====
+e53bd8ff5fa7552d6241fb5216f316b4049efd893237790387f86c2db5edcb32  tb_hop_path.v
+76006a1f9dc5d2e3d56e222b692574af434cc90a729627bfd6bf49d5182e1d36  run_tests.sh
+===== SIMULATION RESULTS =====
+
+========== out/s0_one_tile.log ==========
+---- common ----
+config: SCEN=0 POLICY=1 K=16 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=16 other injected=0 delivered=16 (gemm 16, other 0)
+sends=16 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=16 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 5970000 (1ps)
+
+========== out/s0_two_limit1.log ==========
+---- common ----
+config: SCEN=0 POLICY=1 K=16 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+========== out/s0_two_limit2.log ==========
+---- common ----
+config: SCEN=0 POLICY=1 K=16 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+========== out/s1_policy0.log ==========
+---- common ----
+config: SCEN=1 POLICY=0 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=4 delivered=4 (gemm 0, other 4)
+sends=4 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=3
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- scheduler order (K=1) ----
+send order of tags: 0 1 2 3  (injected 0,1,2,3 with D = 500,100,300,200)
+[PASS]    send order matches the policy (FCFS = arrival, others = earliest D)
+[PASS]    all four flits delivered
+measured gap between sends with K=1: 9 cycles (2*D_PHY = 8)
+[PASS]    credit never returns earlier than 2*D_PHY
+[FINDING] t RTT = 2*D_PHY + 1 (one extra register); K >= 9 needed for 1 flit/cycle
+SUMMARY: SCEN=1 POLICY=0 K=1 errors=0 findings=1
+tb_hop_path.v:357: $finish called at 670000 (1ps)
+
+========== out/s1_policy1.log ==========
+---- common ----
+config: SCEN=1 POLICY=1 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=4 delivered=4 (gemm 0, other 4)
+sends=4 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=3
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- scheduler order (K=1) ----
+send order of tags: 0 1 3 2  (injected 0,1,2,3 with D = 500,100,300,200)
+[PASS]    send order matches the policy (FCFS = arrival, others = earliest D)
+[PASS]    all four flits delivered
+measured gap between sends with K=1: 9 cycles (2*D_PHY = 8)
+[PASS]    credit never returns earlier than 2*D_PHY
+[FINDING] t RTT = 2*D_PHY + 1 (one extra register); K >= 9 needed for 1 flit/cycle
+SUMMARY: SCEN=1 POLICY=1 K=1 errors=0 findings=1
+tb_hop_path.v:357: $finish called at 670000 (1ps)
+
+========== out/s1_policy2.log ==========
+---- common ----
+config: SCEN=1 POLICY=2 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=4 delivered=4 (gemm 0, other 4)
+sends=4 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=3
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- scheduler order (K=1) ----
+send order of tags: 0 1 3 2  (injected 0,1,2,3 with D = 500,100,300,200)
+[PASS]    send order matches the policy (FCFS = arrival, others = earliest D)
+[PASS]    all four flits delivered
+measured gap between sends with K=1: 9 cycles (2*D_PHY = 8)
+[PASS]    credit never returns earlier than 2*D_PHY
+[FINDING] t RTT = 2*D_PHY + 1 (one extra register); K >= 9 needed for 1 flit/cycle
+SUMMARY: SCEN=1 POLICY=2 K=1 errors=0 findings=1
+tb_hop_path.v:357: $finish called at 670000 (1ps)
+
+========== out/s1_policy3.log ==========
+---- common ----
+config: SCEN=1 POLICY=3 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=4 delivered=4 (gemm 0, other 4)
+sends=4 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=3
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- scheduler order (K=1) ----
+send order of tags: 0 1 3 2  (injected 0,1,2,3 with D = 500,100,300,200)
+[PASS]    send order matches the policy (FCFS = arrival, others = earliest D)
+[PASS]    all four flits delivered
+measured gap between sends with K=1: 9 cycles (2*D_PHY = 8)
+[PASS]    credit never returns earlier than 2*D_PHY
+[FINDING] t RTT = 2*D_PHY + 1 (one extra register); K >= 9 needed for 1 flit/cycle
+SUMMARY: SCEN=1 POLICY=3 K=1 errors=0 findings=1
+tb_hop_path.v:357: $finish called at 670000 (1ps)
+
+========== out/s1_policy4.log ==========
+---- common ----
+config: SCEN=1 POLICY=4 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=4 delivered=4 (gemm 0, other 4)
+sends=4 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=3
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- scheduler order (K=1) ----
+send order of tags: 0 1 3 2  (injected 0,1,2,3 with D = 500,100,300,200)
+[PASS]    send order matches the policy (FCFS = arrival, others = earliest D)
+[PASS]    all four flits delivered
+measured gap between sends with K=1: 9 cycles (2*D_PHY = 8)
+[PASS]    credit never returns earlier than 2*D_PHY
+[FINDING] t RTT = 2*D_PHY + 1 (one extra register); K >= 9 needed for 1 flit/cycle
+SUMMARY: SCEN=1 POLICY=4 K=1 errors=0 findings=1
+tb_hop_path.v:357: $finish called at 670000 (1ps)
+
+========== out/s2_overflow.log ==========
+---- common ----
+config: SCEN=2 POLICY=1 K=1 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=0 other injected=8 delivered=5 (gemm 0, other 5)
+sends=5 min_gap_between_sends=9 credit min=0 max=1 max_slots_used=4
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+         dropped flits = 3
+[FINDING] eady_mem dropped flits silently (no backpressure to packer/other source)
+---- overflow (K=1, 8 flits back to back) ----
+injected 8, delivered 5
+[FINDING] flits lost when 4 slots are full; no backpressure signal exists
+SUMMARY: SCEN=2 POLICY=1 K=1 errors=0 findings=2
+tb_hop_path.v:357: $finish called at 1630000 (1ps)
+
+========== out/s3_unpack_clobber.log ==========
+---- common ----
+config: SCEN=3 POLICY=1 K=16 D_PHY=4 N_TILES=1 W_LEN=1 ADMIT_LIMIT=1
+flits packed=16 other injected=1 delivered=17 (gemm 16, other 1)
+sends=17 min_gap_between_sends=9 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+---- other flit during unpack (K=16) ----
+bytes out=512 (expected 512), mismatches=23, extra=0, first mismatch at byte 9
+[FINDING] unpack takes non-GEMM flits and overwrites the GEMM flit it is streaming
+SUMMARY: SCEN=3 POLICY=1 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 6170000 (1ps)

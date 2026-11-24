@@ -1,0 +1,1592 @@
+59c40d48d30d4ae5c665b8bde6f85eb9bbc1b94f50a0a7e5fcd47c39e06d9867  ../RTL_design/cells.v
+f9b9524f808c003c0c78812d2961e68b51a4b97780449d6e070a63cbf556f474  ../RTL_design/hop_control.v
+0e6cc657d24112408d297508ca2fc2c0e2617ddd7f8ce8c4098607d51ea0c47e  ../RTL_design/release.v
+83d3490734cf2e9622c59660ed07f157527133d6fb5358d34ba21ac88578a815  ../RTL_design/packer.v
+bdd5cf9144f740f192b9bfd704d5867053c4866e6077cc311dd0a3b27226722a  ../RTL_design/ready_mem.v
+8e4221664841b930d374778e42073776bb7878606a9c5836f7c93b83963b26c7  ../RTL_design/scores.v
+502371cc681a7c66a2be7b32ad6da794551938c331d5062c3886ece48800b92a  ../RTL_design/scheduler_tree.v
+b89f29a334978b5591ecd6a59a6f27d0227b8eab8c3acaafe32fbf9b00e154b7  ../RTL_design/hop_credit.v
+f2353a77f5d936533c7b7d57663f4e21a60a141120454c6eeb51b89ca1373ab8  ../RTL_design/phy_box.v
+dfa12b4f6b0180145feb41e34475edc39a6d14ce94ae29ceaedb9cbef8d52ece  ../RTL_design/hop_unpack.v
+cfbaa4d6fa8c49c6ac2f35f87c8513267296eca4512e5134fdbbe7fe557d107c  ../RTL_design/hop_path.v
+e53bd8ff5fa7552d6241fb5216f316b4049efd893237790387f86c2db5edcb32  tb_hop_path.v
+
+===== buffer_sweep_out/k16_p0_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=16 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=0 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k16_p0_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=16 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=0 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k16_p1_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=16 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k16_p1_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=16 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k16_p2_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=16 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=2 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k16_p2_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=16 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=2 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k16_p3_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=16 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=3 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k16_p3_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=16 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=3 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k16_p4_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=16 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=4 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k16_p4_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=16 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=15 max=16 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=4 K=16 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k1_p0_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=1 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k1_p0_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=1 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k1_p1_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=1 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k1_p1_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=1 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k1_p2_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=1 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k1_p2_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=1 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k1_p3_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=1 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k1_p3_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=1 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k1_p4_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=1 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k1_p4_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=1 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=0 max=1 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=1 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k2_p0_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=2 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k2_p0_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=2 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k2_p1_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=2 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k2_p1_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=2 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k2_p2_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=2 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k2_p2_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=2 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k2_p3_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=2 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k2_p3_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=2 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k2_p4_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=2 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k2_p4_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=2 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=1 max=2 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=2 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k4_p0_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=4 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k4_p0_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=4 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k4_p1_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=4 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k4_p1_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=4 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k4_p2_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=4 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k4_p2_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=4 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k4_p3_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=4 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k4_p3_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=4 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k4_p4_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=4 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k4_p4_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=4 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=3 max=4 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=4 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k8_p0_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=8 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k8_p0_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=8 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=0 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k8_p1_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=8 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k8_p1_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=8 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=1 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k8_p2_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=8 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k8_p2_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=8 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=2 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k8_p3_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=8 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k8_p3_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=8 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=3 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k8_p4_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=8 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k8_p4_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=8 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=7 max=8 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+SUMMARY: SCEN=0 POLICY=4 K=8 errors=0 findings=3
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k9_p0_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=9 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=0 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k9_p0_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=0 K=9 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=0 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k9_p1_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=9 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k9_p1_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=1 K=9 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=1 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k9_p2_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=9 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=2 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k9_p2_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=2 K=9 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=2 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k9_p3_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=9 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=3 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k9_p3_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=3 K=9 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=3 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)
+
+===== buffer_sweep_out/k9_p4_a1.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=9 D_PHY=4 N_TILES=2 W_LEN=1 ADMIT_LIMIT=1
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=516 last_flit_arrives=1032 deadline D=56 lateness=976
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=4 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11110000 (1ps)
+
+===== buffer_sweep_out/k9_p4_a2.log =====
+---- common ----
+config: SCEN=0 POLICY=4 K=9 D_PHY=4 N_TILES=2 W_LEN=2 ADMIT_LIMIT=2
+flits packed=32 other injected=0 delivered=32 (gemm 32, other 0)
+sends=32 min_gap_between_sends=32 credit min=8 max=9 max_slots_used=1
+[PASS]    credit_count never exceeds K
+[PASS]    credit_count returns to K when idle
+[PASS]    no flit appears from nowhere
+---- gemm data path ----
+[PASS]    16 GEMM flits per tile reach the compute die
+[PASS]    flit payload / tile / panel match expected
+[PASS]    number of sends equals flits injected
+[PASS]    square_finished once per tile
+[PASS]    done asserted
+[PASS]    unpack outputs exactly 512 bytes per tile
+[PASS]    byte stream equals byte stream fed in
+tile 0: first_byte_at=2 last_flit_arrives=518 deadline D=40 lateness=478
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+tile 1: first_byte_at=515 last_flit_arrives=1031 deadline D=56 lateness=975
+[FINDING] tile misses D_k = 16k+40 (byte lane is 1 byte/cycle, see report)
+avg cycles per flit, tile 0 = 32 (model assumes 1)
+max distinct GEMM tiles waiting in ready_mem = 1
+[FINDING] only one tile waits at a time: tie-break fields L/P/C never decide
+[FINDING] credit never reached 0: K is not 'shallow' relative to the credit RTT
+SUMMARY: SCEN=0 POLICY=4 K=9 errors=0 findings=4
+tb_hop_path.v:357: $finish called at 11100000 (1ps)

@@ -1,0 +1,28 @@
+59c40d48d30d4ae5c665b8bde6f85eb9bbc1b94f50a0a7e5fcd47c39e06d9867  ../RTL_design/cells.v
+f9b9524f808c003c0c78812d2961e68b51a4b97780449d6e070a63cbf556f474  ../RTL_design/hop_control.v
+b89f29a334978b5591ecd6a59a6f27d0227b8eab8c3acaafe32fbf9b00e154b7  ../RTL_design/hop_credit.v
+cfbaa4d6fa8c49c6ac2f35f87c8513267296eca4512e5134fdbbe7fe557d107c  ../RTL_design/hop_path.v
+dfa12b4f6b0180145feb41e34475edc39a6d14ce94ae29ceaedb9cbef8d52ece  ../RTL_design/hop_unpack.v
+83d3490734cf2e9622c59660ed07f157527133d6fb5358d34ba21ac88578a815  ../RTL_design/packer.v
+f2353a77f5d936533c7b7d57663f4e21a60a141120454c6eeb51b89ca1373ab8  ../RTL_design/phy_box.v
+bdd5cf9144f740f192b9bfd704d5867053c4866e6077cc311dd0a3b27226722a  ../RTL_design/ready_mem.v
+0e6cc657d24112408d297508ca2fc2c0e2617ddd7f8ce8c4098607d51ea0c47e  ../RTL_design/release.v
+502371cc681a7c66a2be7b32ad6da794551938c331d5062c3886ece48800b92a  ../RTL_design/scheduler_tree.v
+8e4221664841b930d374778e42073776bb7878606a9c5836f7c93b83963b26c7  ../RTL_design/scores.v
+[PRE_RESET] credit=0 ready=1 pack_count=11
+[PASS] reset precondition: outstanding + queued + partial pack
+[PASS] synchronous reset clears datapath state
+[PASS] no stale PHY data or credit return after reset
+[PASS] fresh flit delivered exactly once after reset
+[RESET_SUMMARY] errors=0 received=1 stale=0
+reset_boundary_out/tb_reset.sv:40: $finish called at 740000 (1ps)
+[UNPACK_BOUNDARY] gap=1 expected_bytes=64 observed_bytes=33 ordered_mismatch=31 integrity_pass=0
+reset_boundary_out/tb_unpack_boundary.sv:23: $finish called at 450000 (1ps)
+[UNPACK_BOUNDARY] gap=9 expected_bytes=64 observed_bytes=41 ordered_mismatch=23 integrity_pass=0
+reset_boundary_out/tb_unpack_boundary.sv:23: $finish called at 530000 (1ps)
+[UNPACK_BOUNDARY] gap=31 expected_bytes=64 observed_bytes=63 ordered_mismatch=1 integrity_pass=0
+reset_boundary_out/tb_unpack_boundary.sv:23: $finish called at 750000 (1ps)
+[UNPACK_BOUNDARY] gap=32 expected_bytes=64 observed_bytes=64 ordered_mismatch=0 integrity_pass=1
+reset_boundary_out/tb_unpack_boundary.sv:23: $finish called at 760000 (1ps)
+[UNPACK_BOUNDARY] gap=33 expected_bytes=64 observed_bytes=64 ordered_mismatch=0 integrity_pass=1
+reset_boundary_out/tb_unpack_boundary.sv:23: $finish called at 770000 (1ps)

@@ -1,0 +1,43 @@
+# Simulation artifacts
+*.vvp
+*.vcd
+*.fst
+*.vpd
+*.out
+
+# Generated verification directories
+/tb/out/
+/tb/directed_out/
+/tb/scheduler_out/
+/tb/buffer_sweep_out/
+/tb/contention_out/
+/tb/reset_boundary_out/
+
+# Duplicate baseline evidence
+/tb/verification_baseline.txt
+
+# Temporary archives
+*.tar.gz
+*.zip
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# OpenROAD generated artifacts
+/openroad/logs/
+/openroad/reports/
+/openroad/results/
+/openroad/objects/
+
+# Credentials and environment
+.env
+.env.*
+*.pem
+*.key
+
+# IDE and OS artifacts
+.vscode/
+.DS_Store
+Thumbs.db
+~$*.docx
